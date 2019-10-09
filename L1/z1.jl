@@ -59,21 +59,21 @@ println(ep64, "   ", eps(Float64))
 
 println()
 
-println("Etas:")
+println("Eta:")
 println(me16, "     ", nextfloat(Float16(0)))
 println(me32, "    ", nextfloat(Float32(0)))
 println(me64, "   ", nextfloat(Float64(0)))
 
 println()
 
-println("Floatmins:")
+println("Floatmin:")
 println(floatmin(Float16))
 println(floatmin(Float32))
 println(floatmin(Float64))
 
 println()
 
-println("Floatmaxes:")
+println("Floatmax:")
 println(mx16, "     ", floatmax(Float16(0)))
 println(mx32, "    ", floatmax(Float32(0)))
 println(mx64, "   ", floatmax(Float64(0)))
