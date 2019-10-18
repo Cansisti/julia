@@ -1,25 +1,29 @@
 # Tomasz Beneś
-# list 1, task 3
+# list 1, task 3, alternative solution
 
-function test_delta(d ::Float64, a ::Float64, b ::Float64)
-	x = a
-	y = nextfloat(a)
-	while y <= b
-		if y - x == d
-			x = y
-			y = nextfloat(y)
-		else
-			return false
-		end
-	end
-	return true
+function test_delta(ax, ay)
+	x = Float64(ax)
+	x1 = nextfloat(x)
+	x2 = nextfloat(x1)
+	x3 = nextfloat(x2)
+	y = Float64(ay)
+	yn1 = prevfloat(y)
+
+	println(bitstring(x))
+	println(bitstring(x1))
+	println(bitstring(x2))
+	println(bitstring(x3))
+	println(bitstring(yn1))
+	println(bitstring(y))
 end
 
 println("------- Results -------\n")
 
-# println("[1,2] step is 2^-52 :")
-# println(test_delta(2.0 ^ (-52), 1.0, 2.0)) # true
-# println("[0.5,1] step is 2^-53 :")
-# println(test_delta(2.0 ^ (-53), 0.5, 1.0)) # true
-# println("[2,4] step is 2^-51 :")
-# println(test_delta(2.0 ^ (-51), 2.0, 4.0)) # true
+println("------- [1, 2] --------")
+test_delta(1, 2)
+
+println("\n------- [0.5, 1] --------")
+test_delta(0.5, 1)
+
+println("\n------- [2, 4] --------")
+test_delta(2, 4)
