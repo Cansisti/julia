@@ -1,6 +1,8 @@
 # Tomasz Beneś
 # list 1, task 3, alternative solution
 
+# Wypisuje binarne reprezentacje kolejnych czterech liczb z przedziału, oraz ostatnie dwie
+# ax i ay są końcami przedziału
 function test_delta(ax, ay)
 	x = Float64(ax)
 	x1 = nextfloat(x)
