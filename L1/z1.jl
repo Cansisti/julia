@@ -18,7 +18,7 @@ function calc_eta(t)
 	x = t(1)
 	while x > 0
 		y = x/2
-		if y <= 0 break end
+		if y == 0 break end
 		x = y
 	end
 	return x
@@ -66,16 +66,16 @@ println(ep64, "   ", eps(Float64))
 println()
 
 println("Eta:")
-println(me16, "     ", nextfloat(Float16(0)))
-println(me32, "    ", nextfloat(Float32(0)))
-println(me64, "   ", nextfloat(Float64(0)))
+println(me16, "     ", nextfloat(Float16(0)), " ", bitstring(me16))
+println(me32, "    ", nextfloat(Float32(0)), " ", bitstring(me32))
+println(me64, "   ", nextfloat(Float64(0)), " ", bitstring(me64))
 
 println()
 
 println("Floatmin:")
-println(floatmin(Float16))
-println(floatmin(Float32))
-println(floatmin(Float64))
+println(floatmin(Float16), " ", bitstring(floatmin(Float16)))
+println(floatmin(Float32), " ", bitstring(floatmin(Float32)))
+println(floatmin(Float64), " ", bitstring(floatmin(Float64)))
 
 println()
 

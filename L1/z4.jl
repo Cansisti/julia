@@ -14,3 +14,4 @@ end
 x = find_it() # Szukana liczba
 println(x)
 println(bitstring(x))
+println(bitstring(1/x))

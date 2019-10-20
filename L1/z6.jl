@@ -13,7 +13,7 @@ end
 
 println("------- Results -------\n")
 
-for i in 1:10
-	x = Float64(8.0^i)
+for i in 1:156
+	x = Float64(8.0^-i)
 	println(i, " ", x, " ", f(x), " ", g(x), " ", f(x)-g(x));
 end
