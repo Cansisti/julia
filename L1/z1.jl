@@ -1,6 +1,7 @@
 # Tomasz Beneś
 # list 1, task 1
 
+# Oblicza macheps dla danego typu t
 function calc_macheps(t)
 	x = t(1)
 	one = t(1)
@@ -12,6 +13,7 @@ function calc_macheps(t)
 	return x
 end
 
+# Oblicza eta dla danego typu t
 function calc_eta(t)
 	x = t(1)
 	while x > 0
@@ -22,15 +24,16 @@ function calc_eta(t)
 	return x
 end
 
+#Oblicza max dla danego typu t
 function calc_max(t)
-	arr = t[]
+	arr = t[] # Tablica przechowująca kolejne potęgi 2ki
 	x = t(1)
-	while !isinf(x)
+	while !isinf(x) # Wypełnienie tablicy
 		push!(arr, x)
 		x *= 2
 	end
 	x = t(0)
-	while true
+	while true # Dodawanie od największej potęgi
 		y = x + pop!(arr)
 		if isinf(y) break end
 		x = y
@@ -38,14 +41,17 @@ function calc_max(t)
 	return x
 end
 
+# Obliczone macheps dla kolejnych typów Float
 ep16 = calc_macheps(Float16)
 ep32 = calc_macheps(Float32)
 ep64 = calc_macheps(Float64)
 
+# Obliczone ety dla kolejnych typów Float
 me16 = calc_eta(Float16)
 me32 = calc_eta(Float32)
 me64 = calc_eta(Float64)
 
+# Obliczone max dla kolejnych typów Float
 mx16 = calc_max(Float16)
 mx32 = calc_max(Float32)
 mx64 = calc_max(Float64)
