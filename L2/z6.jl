@@ -1,3 +1,6 @@
+# Tomasz Beneś
+# list 2, task 6
+
 function xn1(xn0, c)
     return xn0^2 + c
 end

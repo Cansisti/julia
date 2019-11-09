@@ -1,3 +1,6 @@
+# Tomasz Beneś
+# task 3, list 2
+
 using LinearAlgebra
 
 function matcond(n::Int, c::Float64)
@@ -42,7 +45,7 @@ function hilb_test()
 
 	for n = 10:20
 		A = hilb(n)
-		x = ones(Float64, n)
+		x = ones(Float64, n) # Wektor rozwiązań
 		b = A*x
 		
 		x1 = A\b
@@ -62,10 +65,10 @@ function matcond_test()
 	ns = [5, 10, 20]
 	cs = [1.0, 10.0, 10.0^3, 10.0^7, 10.0^12, 10.0^16]
 
-	for n in ns
-		for c in cs
+	for n in ns # Ilość rozwiązań
+		for c in cs # cond
 			A = matcond(n, c)
-			x = ones(Float64, n)
+			x = ones(Float64, n) # Wektor rozwiązań
 			b = A*x
 
 			x1 = A\b

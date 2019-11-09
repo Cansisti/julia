@@ -1,3 +1,6 @@
+# Tomasz Beneś
+# list 2, task 4a
+
 using Polynomials
 
 Pr = [1, -210.0, 20615.0,-1256850.0,
@@ -10,12 +13,12 @@ Pr = [1, -210.0, 20615.0,-1256850.0,
 	13803759753640704000.0,      -8752948036761600000.0,
 	2432902008176640000.0]
 
-P = Poly(Pr) # TO JEST ŹLE BO FUNKCJA CZYTA NA ODWRÓT
+P = Poly(reverse(Pr))
 p = poly([20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
 
 Z = roots(P)
 
-kk = 20
+kk = 1
 
 for z in Z
 	println()
@@ -24,6 +27,6 @@ for z in Z
 	println("--- ", abs(p(z)))
 	println("--- ", abs(z-kk))
 
-	global kk = kk - 1
+	global kk = kk + 1
 end
 

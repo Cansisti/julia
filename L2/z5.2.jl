@@ -1,3 +1,6 @@
+# Tomasz Beneś
+# list 2, task 5.2
+
 function pn1(pn0, r)
     return pn0 + r*pn0*(1-pn0)
 end
