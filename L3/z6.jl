@@ -25,26 +25,26 @@ println(mbisekcji(f, 0.5, 2.0, 1e-5, 1e-5))
 println(mbisekcji(f, -500.0, 500.0, 1e-5, 1e-5))
 
 println()
-println("g bisekcji")
-println(mbisekcji(g, -2.0, 3.0, 1e-5, 1e-5))
-println(mbisekcji(g, -20.0, 30.0, 1e-5, 1e-5))
-
-println()
 println("f stycznych")
 println(mstycznych(f, pf, 0.0, 1e-5, 1e-5, 1000000))
 println(mstycznych(f, pf, -10.0, 1e-5, 1e-5, 1000000))
 println(mstycznych(f, pf, 10.0, 1e-5, 1e-5, 1000000))
 
 println()
+println("f siecznych")
+println(msiecznych(f, 0.0, 2.0, 1e-5, 1e-5, 1000000))
+println(msiecznych(f, -10.0, 10.0, 1e-5, 1e-5, 1000000))
+
+println()
+println("g bisekcji")
+println(mbisekcji(g, -2.0, 3.0, 1e-5, 1e-5))
+println(mbisekcji(g, -20.0, 30.0, 1e-5, 1e-5))
+
+println()
 println("g stycznych")
 println(mstycznych(g, pg, -1.0, 1e-5, 1e-5, 1000000))
 println(mstycznych(g, pg, 1.0, 1e-5, 1e-5, 1000000))
 println(mstycznych(g, pg, 1.5, 1e-5, 1e-5, 1000000))
-
-println()
-println("f siecznych")
-println(msiecznych(f, 0.0, 2.0, 1e-5, 1e-5, 1000000))
-println(msiecznych(f, -10.0, 10.0, 1e-5, 1e-5, 1000000))
 
 println()
 println("g siecznych")
