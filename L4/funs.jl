@@ -25,7 +25,21 @@ function warNewton(x::Vector{Float64}, fx::Vector{Float64}, t::Float64)
 end
 
 function normalna(x::Vector{Float64}, fx::Vector{Float64})
-
+    n = length(x)
+    a = Array{Float64}(undef, n)
+    poly = zeros(n + 1, n + 1)
+    poly[1,1] = 1
+    for i in 1:n - 1
+        poly[i + 1, 1] = 1
+        poly[i + 1, 2:i + 1] = poly[i, 2:i + 1] - x[i] * poly[i, 1:i]
+    end
+    for i in n:-1:1
+        a[i] = fx[i]
+        for j in 1:n - i
+            a[i] = a[i] + fx[i + j] * poly[i + j, j + 1]
+        end
+    end
+    return a
 end
 
 function rysujNnfx(f, a::Float64, b::Float64, n::Int)
@@ -47,8 +61,8 @@ function rysujNnfx(f, a::Float64, b::Float64, n::Int)
 
 	interpolation = Array{Float64, 1}(undef, l)
 	h = (b-a)/l
-	Xi = Array{Float64, 1}(undef, l)
-	Y1 = Array{Float64, 1}(undef, l)
+	Xi = Array{Float64}(undef, l)
+	Y1 = Array{Float64}(undef, l)
 	for i = 1:l
 		Xi[i] = a + (i-1)*h
 		Y1[i] = f(Xi[i])
