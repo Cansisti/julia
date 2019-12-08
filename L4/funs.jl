@@ -53,6 +53,12 @@ function rysujNnfx(f, a::Float64, b::Float64, n::Int)
 		Xi[i] = a + (i-1)*h
 		Y1[i] = f(Xi[i])
 		interpolation[i] = warNewton(x,fx,Xi[i])
+		if interpolation[i] > 3
+			interpolation[i] = 3
+		end
+		if interpolation[i] < -3
+			interpolation[i] = -3
+		end
 	end
 
 	plot(Xi, Y1)
