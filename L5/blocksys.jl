@@ -168,7 +168,7 @@ function gaussian_elimination_with_pivots(A::SparseMatrixCSC{Float64, Int64}, n:
 			b[p[i]] = b[p[i]] - z * b[p[k]]
 		end
 	end
-	x = Array{Float64}(n)
+	x = Array{Float64}(undef, n)
 	for i in n : -1 : 1
 		total = 0.0
 		# Ostatnia kolumna, w której występuje wartość inna niż 0 w i-tym wierszu
