@@ -1,3 +1,5 @@
+# Tomasz Beneś
+
 include("blocksys.jl")
 
 A, n, l = blocksys.read_matrix("L5/Dane50000_1_1/A.txt")
